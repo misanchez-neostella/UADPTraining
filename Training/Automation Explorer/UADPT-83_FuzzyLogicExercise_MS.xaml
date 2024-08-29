@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_83" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="593.3333333333334,1138" sap2010:WorkflowViewState.IdRef="UADPT_83_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ofa="clr-namespace:OS.Fuzzy.Activities;assembly=OS.Fuzzy.Activities" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_83" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1084,2194.6666666666665" sap2010:WorkflowViewState.IdRef="UADPT_83_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ofa="clr-namespace:OS.Fuzzy.Activities;assembly=OS.Fuzzy.Activities" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -107,13 +107,9 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Sequence process to find the closest match to an input text within a target set.&#xA;Practical exercise #1 from the UADPT NeostellaCo. Onboarding program.&#xA;&#xA;Michael Sanchez&#xA;RPA Dev.&#xA;2024" DisplayName="UADPT_83" sap:VirtualizedContainerService.HintSize="688,2310" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Sequence process to find the closest match to an input text within a target set.&#xA;Practical exercise #1 from the UADPT NeostellaCo. Onboarding program.&#xA;&#xA;Michael Sanchez&#xA;RPA Dev.&#xA;2024" DisplayName="UADPT_83" sap:VirtualizedContainerService.HintSize="688,2130" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="ArrayOfWords">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;azul&quot;,&quot;nocturno&quot;,&quot;relincho&quot;,&quot;alma&quot;,&quot;laberinto&quot;,&quot;muerte&quot;}" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;azul&quot;,&quot;nocturno&quot;,&quot;relincho&quot;,&quot;alma&quot;,&quot;laberinto&quot;,&quot;muerte&quot;}]" Name="ArrayOfWords" />
       <Variable x:TypeArguments="x:String" Name="TargetWord" />
       <Variable x:TypeArguments="x:Int32" Name="MaxLevenshteinNumber" />
       <Variable x:TypeArguments="x:String" Name="ClosestMatch" />
@@ -126,6 +122,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Variable>
+      <Variable x:TypeArguments="x:String" Name="HumanInput" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,28 +130,25 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="626,466" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,354" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Set of Words" sap:VirtualizedContainerService.HintSize="354,266" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="[&quot;Input the Set of Words to be evaluated using this format:&quot; + Environment.NewLine + &quot;{&quot;+&quot;&quot;&quot;Word1&quot;&quot;&quot;+&quot;,&quot;+ &quot;&quot;&quot;Word2&quot;&quot;&quot;+&quot;,&quot;+&quot;&quot;&quot;Word3&quot;&quot;&quot;+&quot;,...,&quot;+&quot;&quot;&quot;WordN&quot;&quot;&quot;+&quot;}&quot;]" Title="Input a Set of Words">
-            <ui:InputDialog.Result>
-              <OutArgument x:TypeArguments="s:String[]">[ArrayOfWords]</OutArgument>
-            </ui:InputDialog.Result>
-          </ui:InputDialog>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Target Word" sap:VirtualizedContainerService.HintSize="626,275.3333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What's the Word you want to use as target to compare each of the words in the set provided?" Title="Input Target Word">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Set of Words" sap:VirtualizedContainerService.HintSize="626,278" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="[&quot;Input the Set of Words to be evaluated using this format:&quot; + Environment.NewLine + &quot;Word1,Word2,Word3,...,WordN.&quot;]" Title="Input a Set of Words">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[HumanInput]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <Assign sap:VirtualizedContainerService.HintSize="626,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ArrayOfWords]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[HumanInput.Split(",")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Target Word" sap:VirtualizedContainerService.HintSize="626,278" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What's the Word you want to use as target to compare each of the words in the set provided?" Title="Input Target Word">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[TargetWord]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Assign sap2010:Annotation.AnnotationText="This Int32 variable is used as tracer of closest score, starts at zero so the first evaluated word can be declared as closest in only one iteration." DisplayName="Initialize MaxScore" sap:VirtualizedContainerService.HintSize="626,160.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="This Int32 variable is used as tracer of closest score, starts at zero so the first evaluated word can be declared as closest in only one iteration." DisplayName="Initialize MaxScore" sap:VirtualizedContainerService.HintSize="626,162.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[MaxLevenshteinNumber]</OutArgument>
       </Assign.To>
@@ -167,28 +161,28 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Word in the Set" sap:VirtualizedContainerService.HintSize="626,1103.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ArrayOfWords]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Word in the Set" sap:VirtualizedContainerService.HintSize="626,984.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ArrayOfWords]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="Word" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,956" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,836.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ofa:Score ContinueOnError="{x:Null}" DisplayName="Get Levenshtein Score" EvaluatedScore="[LevenshteinScore]" FirstInputString="[Word]" sap:VirtualizedContainerService.HintSize="530,166.66666666666666" sap2010:WorkflowViewState.IdRef="Score_1" Preprocess="True" ScoreAlgorithm="Ratio" SecondInputString="[TargetWord]" />
-            <If Condition="[LevenshteinScore&gt;MaxLevenshteinNumber]" DisplayName="If new Closest Match" sap:VirtualizedContainerService.HintSize="530,701.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
+            <ofa:Score ContinueOnError="{x:Null}" DisplayName="Get Levenshtein Score" EvaluatedScore="[LevenshteinScore]" FirstInputString="[Word]" sap:VirtualizedContainerService.HintSize="530,168" sap2010:WorkflowViewState.IdRef="Score_1" Preprocess="True" ScoreAlgorithm="Ratio" SecondInputString="[TargetWord]" />
+            <If Condition="[LevenshteinScore&gt;MaxLevenshteinNumber]" DisplayName="If new Closest Match" sap:VirtualizedContainerService.HintSize="530,580.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then Declare New Closest Match and New Score" sap:VirtualizedContainerService.HintSize="496,435.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then Declare New Closest Match and New Score" sap:VirtualizedContainerService.HintSize="496,313.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign Closest Match" sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign Closest Match" sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[ClosestMatch]</OutArgument>
                     </Assign.To>
@@ -196,7 +190,7 @@
                       <InArgument x:TypeArguments="x:String">[Word]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Assign New Score" sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign DisplayName="Assign New Score" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[MaxLevenshteinNumber]</OutArgument>
                     </Assign.To>
@@ -204,11 +198,10 @@
                       <InArgument x:TypeArguments="x:Int32">[LevenshteinScore]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[TargetWord + LevenshteinScore.ToString + ClosestMatch]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -227,6 +220,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[chosenButton]" DisplayName="Closest Match" sap:VirtualizedContainerService.HintSize="626,108.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Closest match for &quot; + TargetWord+ &quot; within&quot; +Environment.NewLine +ArrayOfWords.ToString +Environment.NewLine +&quot;is &quot;+ClosestMatch+&quot; with a &quot;+MaxLevenshteinNumber.ToString+&quot;/100 Levenshtein score.&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[chosenButton]" DisplayName="Closest Match" sap:VirtualizedContainerService.HintSize="626,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Closest match for &quot; + TargetWord+ &quot; within&quot; +Environment.NewLine + String.Join(&quot;,&quot;,ArrayOfWords) +Environment.NewLine +&quot;is &quot;+ClosestMatch+&quot; with a &quot;+MaxLevenshteinNumber.ToString+&quot;/100 Levenshtein score.&quot;]" />
   </Sequence>
 </Activity>

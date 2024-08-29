@@ -4,6 +4,7 @@
   "description": "Practical Training for UiPath Automation Development Professional Training",
   "main": "Main.xaml",
   "dependencies": {
+    "OfficeSamurai.FuzzyWuzzy.Activities": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.23.4]",
     "UiPath.Mail.Activities": "[1.23.1]",
     "UiPath.System.Activities": "[24.10.3]",

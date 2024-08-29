@@ -15,6 +15,37 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Explorer/UADPT-83_FuzzyLogicExercise_MS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "HumanInput&Sequence_1",
+        "ArrayOfWords&Sequence_1",
+        "TargetWord&Sequence_1",
+        "MaxLevenshteinNumber&Sequence_1",
+        "ClosestMatch&Sequence_1",
+        "LevenshteinScore&Sequence_1",
+        "chosenButton&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Explorer/UAPDT-84_NumbersToClassify_MS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "CounterPositives&Flowchart_1",
+        "CounterZeros&Flowchart_1",
+        "CounterNegatives&Flowchart_1",
+        "Index&Flowchart_1",
+        "dt_Numbers&Flowchart_1",
+        "Number&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
