@@ -21,14 +21,14 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "HumanInput&Sequence_1",
-        "ArrayOfWords&Sequence_1",
-        "TargetWord&Sequence_1",
-        "MaxLevenshteinNumber&Sequence_1",
-        "ClosestMatch&Sequence_1",
-        "LevenshteinScore&Sequence_1",
-        "chosenButton&Sequence_1"
+        "MaxLevenshteinNumber&Sequence_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "LevenshteinScore",
+        "ClosestMatch",
+        "TargetWord",
+        "ArrayOfWords"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },

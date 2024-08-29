@@ -1,4 +1,24 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_83" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1084,2194.6666666666665" sap2010:WorkflowViewState.IdRef="UADPT_83_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ofa="clr-namespace:OS.Fuzzy.Activities;assembly=OS.Fuzzy.Activities" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_83" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ofa="clr-namespace:OS.Fuzzy.Activities;assembly=OS.Fuzzy.Activities" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ArrayOfWords" Type="InArgument(s:String[])" />
+    <x:Property Name="TargetWord" Type="InArgument(x:String)" />
+    <x:Property Name="ClosestMatch" Type="InArgument(x:String)" />
+    <x:Property Name="LevenshteinScore" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <this:UADPT_83.TargetWord>
+    <InArgument x:TypeArguments="x:String" />
+  </this:UADPT_83.TargetWord>
+  <this:UADPT_83.ClosestMatch>
+    <InArgument x:TypeArguments="x:String" />
+  </this:UADPT_83.ClosestMatch>
+  <this:UADPT_83.LevenshteinScore>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:UADPT_83.LevenshteinScore>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1084,2194.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>UADPT_83_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -109,19 +129,7 @@
   </sap:WorkflowViewStateService.ViewState>
   <Sequence sap2010:Annotation.AnnotationText="Sequence process to find the closest match to an input text within a target set.&#xA;Practical exercise #1 from the UADPT NeostellaCo. Onboarding program.&#xA;&#xA;Michael Sanchez&#xA;RPA Dev.&#xA;2024" DisplayName="UADPT_83" sap:VirtualizedContainerService.HintSize="688,2130" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Default="[{&quot;azul&quot;,&quot;nocturno&quot;,&quot;relincho&quot;,&quot;alma&quot;,&quot;laberinto&quot;,&quot;muerte&quot;}]" Name="ArrayOfWords" />
-      <Variable x:TypeArguments="x:String" Name="TargetWord" />
       <Variable x:TypeArguments="x:Int32" Name="MaxLevenshteinNumber" />
-      <Variable x:TypeArguments="x:String" Name="ClosestMatch" />
-      <Variable x:TypeArguments="x:Int32" Name="LevenshteinScore" />
-      <Variable x:TypeArguments="x:String" Name="chosenButton">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:String x:Key="SourceIdRef">MessageBox_1</x:String>
-            <x:String x:Key="SourcePropertyName">ChosenButton</x:String>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </Variable>
       <Variable x:TypeArguments="x:String" Name="HumanInput" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -220,6 +228,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[chosenButton]" DisplayName="Closest Match" sap:VirtualizedContainerService.HintSize="626,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Closest match for &quot; + TargetWord+ &quot; within&quot; +Environment.NewLine + String.Join(&quot;,&quot;,ArrayOfWords) +Environment.NewLine +&quot;is &quot;+ClosestMatch+&quot; with a &quot;+MaxLevenshteinNumber.ToString+&quot;/100 Levenshtein score.&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Closest Match" sap:VirtualizedContainerService.HintSize="626,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Closest match for &quot; + TargetWord+ &quot; within&quot; +Environment.NewLine + String.Join(&quot;,&quot;,ArrayOfWords) +Environment.NewLine +&quot;is &quot;+ClosestMatch+&quot; with a &quot;+MaxLevenshteinNumber.ToString+&quot;/100 Levenshtein score.&quot;]" />
   </Sequence>
 </Activity>
