@@ -1,0 +1,5 @@
+"Input the Set of Words to be evaluated using this format:" + Environment.NewLine+ "{"Word1","Word2","Word3,...,WordN}"
+
+{"azul","nocturno"}
+
+"Input the Set of Words to be evaluated using this format:" + Environment.NewLine + "{"+"""Word1"""+","+ """Word2"""+","+"""Word3"""+",...,"+"""WordN"""+"}"
