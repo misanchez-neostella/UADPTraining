@@ -46,6 +46,18 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Explorer/UADPT-84_TrainingUIModernDesign_MS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Duration&Sequence_1",
+        "PartnerUsername&Sequence_1",
+        "PartnerPassWord&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
