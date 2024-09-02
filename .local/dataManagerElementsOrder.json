@@ -48,7 +48,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Training/Automation Explorer/UADPT-84_TrainingUIModernDesign_MS.xaml",
+      "Path": "Training/Automation Explorer/UADPT-84/UADPT-84_TrainingUIModernDesign_MS.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "Duration&Sequence_1",
@@ -56,6 +56,25 @@
         "PartnerPassWord&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Explorer/UADPT-84/LoginLastPass.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Explorer/UADPT-84/GetCredentialsUiPartner.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_PartnerPassword",
+        "out_PartnerUsername"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
