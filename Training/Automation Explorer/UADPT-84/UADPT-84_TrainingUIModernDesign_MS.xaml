@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_84_TrainingUIModernDesign_MS" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1180,835.3333333333334" sap2010:WorkflowViewState.IdRef="UADPT_84_TrainingUIModernDesign_MS_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UADPT_84_TrainingUIModernDesign_MS" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="613.3333333333335,3402" sap2010:WorkflowViewState.IdRef="UADPT_84_TrainingUIModernDesign_MS_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -103,7 +103,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Sequence process to get the duration of the UiPath Automation Developer Professional Training course at Academy Partner.&#xA;Practical exercise #3 from the UADPT NeostellaCo. Onboarding program.&#xA;&#xA;Requires LastPass User to be logged in.&#xD;&#xA;And Partner logged out&#xA;&#xA;Michael Sanchez&#xA;RPA Dev.&#xA;2024" DisplayName="UADPT_84_TrainingUIModernDesign_MS" sap:VirtualizedContainerService.HintSize="512,3001.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Sequence process to get the duration of the UiPath Automation Developer Professional Training course at Academy Partner.&#xA;Practical exercise #3 from the UADPT NeostellaCo. Onboarding program.&#xA;&#xA;Requires LastPass User to be logged in.&#xA;And UiPartner to be logged out&#xA;&#xA;Michael Sanchez&#xA;RPA Dev.&#xA;2024" DisplayName="UADPT_84_TrainingUIModernDesign_MS" sap:VirtualizedContainerService.HintSize="512,3337.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="PartnerPassWord" />
       <Variable x:TypeArguments="x:String" Name="PartnerUsername" />
@@ -115,101 +115,31 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Get Credentials from LastPass Vault" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="f3ffd106-e4d7-4dba-8209-b5c4992017af" Version="V2">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LoginLastPass - Invoke Workflow File (Training\Automation Explorer\LoginLastPass.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Training\Automation Explorer\UADPT-84\LoginLastPass.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCredentialsUiPartner - Invoke Workflow File (GetCredentialsUiPartner.xaml)" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Training\Automation Explorer\UADPT-84\GetCredentialsUiPartner.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_PartnerUsername">[PartnerUsername]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_PartnerPassword">[PartnerPassword]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open UiPath Academy" sap:VirtualizedContainerService.HintSize="450,1522.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1154.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1272" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Partner Credential" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f3ffd106-e4d7-4dba-8209-b5c4992017af" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://lastpass.com/vault/" DesignTimeRectangle="559, 832, 375, 26" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl class='vault-item-displayname' idx='3' parentid='folderContent1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='vault-item-displayname' type='' parentid='folderContent1' tag='DIV' aaname='' check:innerText='uipath.com' /&gt;" Guid="b492bae2-eb05-424d-960c-15ba1186a883" ImageBase64="" InformativeScreenshot="36b2e05442070dc19262b0bf9d64fdcf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click edit button" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f3ffd106-e4d7-4dba-8209-b5c4992017af" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://lastpass.com/vault/" DesignTimeRectangle="17, 186, 0, 0" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Edit' idx='3' parentid='folderContent1' tag='BUTTON' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl aaname='Edit' type='' parentid='folderContent1' tag='BUTTON' class='itemButton edit' /&gt;" Guid="d269a754-b7e2-4a3a-b04e-b038dd545da8" ImageBase64="" InformativeScreenshot="dd1b838d3fcc1d31658b5cce80b4f36d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NGetText DisplayName="Get Partner Username" sap:VirtualizedContainerService.HintSize="354,191.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="f3ffd106-e4d7-4dba-8209-b5c4992017af" TextString="[PartnerUsername]" Version="V3">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://lastpass.com/vault/" DesignTimeRectangle="360, 468, 555, 45" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl name='username' shadowhostid='' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl name='username' shadowhostid='' tag='INPUT' type='' class='legacy-vault-dialog-portal-17hj7tm e9y86r133' aaname='' /&gt;" Guid="2323da60-a817-4c82-a14b-d053dbafe491" ImageBase64="" InformativeScreenshot="645892cd9bfe92e6d26dcbddafb7c895.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NGetText.Target>
-            </uix:NGetText>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click  'Show Password' icon" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f3ffd106-e4d7-4dba-8209-b5c4992017af" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://lastpass.com/vault/" DesignTimeRectangle="1464, 482, 27, 17" DesignTimeScaleFactor="1.5" ElementType="Icon" FullSelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl css-selector='div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;label&amp;gt;span&amp;gt;button&amp;gt;svg&amp;gt;g&amp;gt;g&amp;gt;path' shadowhostid='' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl type='' shadowhostid='' tag='path' class='' aaname='' /&gt;" Guid="b74d12f6-3ba1-4232-8c76-8778e94d067f" ImageBase64="" InformativeScreenshot="1d7ceeea993aff0acc76d65964f637ca.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NGetText DisplayName="Get Partner Password" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="f3ffd106-e4d7-4dba-8209-b5c4992017af" TextString="[PartnerPassWord]" Version="V3">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://lastpass.com/vault/" DesignTimeRectangle="945, 468, 555, 45" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl name='password' shadowhostid='' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='reactOverlayContent' tag='DIV' /&gt;&lt;webctrl name='password' shadowhostid='' tag='INPUT' type='text' class='legacy-vault-dialog-portal-17hj7tm e9y86r133' aaname='' /&gt;" Guid="33371fc0-3247-4816-a8d4-65351f5ba0b9" ImageBase64="" InformativeScreenshot="274cc3a63dbbd409c28ea83fe7a4c930.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NGetText.Target>
-            </uix:NGetText>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1150" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMvSURBVHhe7VdbaxNBGPXfVMSWqhVKQRBBvKEWREFFqSA+qGAfFBQL+iDeRRBF8YpvUgQRvIAUwSt4o4JNbFPtLcGYFk1rW2ODOu5ZJySZPbvZ3fSlO3PgvHwz38nu2W/m+zLrQ22N0JnGABbUicYAFtSJxgAW1InGABbUicYAFtSJxgAW1InGABbUicYAFtSJxgAWjBK7GupE+tRx8XnrRroeeQPSZ08L4E8uR9cjb8Dwtcu2AUDX/FrHul4G1M9xrJsKUANRo6mA6aiA+KJGkTywT2QunCu2lLrZdK8bPy5uEqlDB22NLyeOik+bNtB9XuxetqSoceyI6F23lu4rZVUGoGQyF8/bLUTFz3jM1wPgR0duXhd/83mZWcRk5zuRWL2c5pUytrBefGu/JbPKMf7yhW0MywPDHwHrC48+uCdTOWCM15fED/549kTu5vidzYpE8yqaD8JAGOWFfCbjakLoCkgdbpNp3phKpexpi2l8lUNIJeR6ul2P1MiNq3KXNybevqH54QywHmYqlZRplYFzqWrgx/B1/WKwdbdDI97UQI+fG/paNjs0Qh0BlGQQjHU8cmjgYYLg++12h8bgnl1y1R/wsqpGqAoY2LlDpvgDLkRVA10jCHCZqRroFkEw+vC+QyN4BVjl37+9Rab4w+T7znINi0N7W+WqP4w97nBooNUFQfbuHYdGqApA3w8CtChVI7FmhVz1h+Erlxwa6DBBgIpRNUIZAKIk/aJv2xaqgaPhF3SmwGWcHJI7vIE5g7XC4EdAsnd9Mx1eVLALsEAY40eDXYA2LQP8XoR4UaYRugJAtCavF8CAEmtcQHMLxDzhpYFByW2OKDB95qTczYGBjX1dsCoDQJQmvnLpS2D4wUMxQUac5fHnT8s0fg3025ec2wCkEtU08fqVzP4PDFDJtv2eGqGPgEq8bM/KpfafGrZekdZDYqaHBi7Z0njZvgqkGh6sugJmOqetAmYqTQWYCigxYN5cx7o5AmogaiwMUuwPGxh5A0C0breZRQsDvGgMYEGdaAxgQZ1oDGBBnWgMYEGdaAxgQZ1oDGBBnWgMYEGdaAxgQZ2ouQE14h8a7XRv5dZtSAAAAABJRU5ErkJggg==" InformativeScreenshot="1ec97b485277e88e109e6e5582829427.jpg" Selector="&lt;html app='msedge.exe' title='My LastPass Vault' /&gt;" Title="My LastPass Vault - Google Chrome" Url="https://lastpass.com/vault/" />
-      </uix:NApplicationCard.TargetApp>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open UiPath Academy" sap:VirtualizedContainerService.HintSize="450,1532.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1281.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Login in UiPath Partner" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Login in UiPath Partner" sap:VirtualizedContainerService.HintSize="354,228" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://partnerportal.uipath.com/s/?language=en_US" DesignTimeRectangle="1753, 129, 65, 36" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC1524/selfServiceUserProfileMenu/auraHtml' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC1524/selfServiceUserProfileMenu/auraHtml' tag='SPAN' type='' class='linkLabel' aaname='Login' check:innerText='Login' /&gt;" Guid="9038c18e-6d61-4bf6-8fbb-4bf8d55540bf" ImageBase64="" InformativeScreenshot="e48ea0e3183a2c528e162e2510a06bad.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Partner Portal - Home' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -224,17 +154,17 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DisplayName="Input PartnerUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Text="[PartnerUsername]" Version="V3">
+            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DisplayName="Input PartnerUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,252" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Text="[PartnerUsername]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://partnerportal.uipath.com/s/login/?language=en_US&amp;ec=302&amp;inst=Pa&amp;startURL=%2Fidp%2Flogin%3Fapp%3D0sp1Q000000XZGt%26RelayState%3Dn3C76OWyifYjAqLvl0keIZIWONlDnwj5zXwbWUS7ZzGwarkaZNSzkCzm%26binding%3DHttpRedirect%26inresponseto%3Did592a30452ec146188e5b3ad54028a637" DesignTimeRectangle="546, 866, 809, 36" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' name='username' parentclass='login-form-input' placeholder='Username' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' name='username' parentclass='login-form-input' placeholder='Username' type='text' class='slds-input' aaname='' /&gt;" Guid="88a65da6-bf2b-4d2b-8299-171d8ef9e69e" ImageBase64="" InformativeScreenshot="19af19bd9d66bec5fbdc04288b2f7232.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DisplayName="Input PartnerPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Text="[PartnerPassword]" Version="V3">
+            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DisplayName="Input PartnerPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,252" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Text="[PartnerPassword]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://partnerportal.uipath.com/s/login/?language=en_US&amp;ec=302&amp;inst=Pa&amp;startURL=%2Fidp%2Flogin%3Fapp%3D0sp1Q000000XZGt%26RelayState%3Dn3C76OWyifYjAqLvl0keIZIWONlDnwj5zXwbWUS7ZzGwarkaZNSzkCzm%26binding%3DHttpRedirect%26inresponseto%3Did592a30452ec146188e5b3ad54028a637" ContentHash="0VmPg4zs1kuodeaCuIJhAw" DesignTimeRectangle="546, 960, 809, 36" DesignTimeScaleFactor="1.5" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' parentclass='login-form-input' placeholder='Password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' parentclass='login-form-input' placeholder='Password' class='slds-input' aaname='' /&gt;" Guid="9ba20f97-1901-4718-8b15-91b87c3426c2" ImageBase64="" InformativeScreenshot="54ab91cfa751ab22338b95c77b9b0d7a.png" Reference="KPge2AEKHEuyn4BdbLju5A/GZV_MVKNfUSBNETg_bg8iQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="354,228" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://partnerportal.uipath.com/s/login/?language=en_US&amp;ec=302&amp;inst=Pa&amp;startURL=%2Fidp%2Flogin%3Fapp%3D0sp1Q000000XZGt%26RelayState%3Dn3C76OWyifYjAqLvl0keIZIWONlDnwj5zXwbWUS7ZzGwarkaZNSzkCzm%26binding%3DHttpRedirect%26inresponseto%3Did592a30452ec146188e5b3ad54028a637" DesignTimeRectangle="491, 1037, 877, 80" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' idx='3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='slds-button slds-button_brand login-form-button' aaname='Login' check:text='Login' /&gt;" Guid="99916f0c-3af3-4416-9316-f32f961e8a01" ImageBase64="" InformativeScreenshot="2d1c6da3f9314bf5e6c6158e0b114d1a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -249,7 +179,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Open UiPath Academy" sap:VirtualizedContainerService.HintSize="354,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Open UiPath Academy" sap:VirtualizedContainerService.HintSize="354,221.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83bca049-e14a-444c-8630-1d67f8577ec1" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://partnerportal.uipath.com/s/" DesignTimeRectangle="942, 577, 192, 36" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='C-HARRIER-FOOTER' /&gt;&lt;webctrl aaname='Learning' tag='DIV' /&gt;&lt;nav up='2' /&gt;&lt;webctrl aaname='Partner Academy' innertext='Partner Academy' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC1524/cHarrierFooter' tag='C-HARRIER-FOOTER' /&gt;&lt;webctrl aaname='Partner Academy' tag='BUTTON' type='button' class='slds-button harrier-button harrier-button_text_wrap harrier-button_link' check:innerText='Partner Academy' /&gt;" Guid="b3870a69-4837-40b3-b3e4-9a8e4fe3c0a8" ImageBase64="" InformativeScreenshot="123d871b45b1622f247910afb0d02be0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Partner Portal - Home' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -280,19 +210,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Get Duration" sap:VirtualizedContainerService.HintSize="450,985.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" ScopeGuid="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Get Duration" sap:VirtualizedContainerService.HintSize="450,981.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" ScopeGuid="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,734" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,730.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open My Dashboard" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open My Dashboard" sap:VirtualizedContainerService.HintSize="354,228" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/partneracademy" DesignTimeRectangle="611, 148, 168, 29" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' innertext='My Dashboard' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Dashboard' parentid='topMenu' innertext='My Dashboard' tag='SPAN' type='' class='' check:text='My Dashboard' /&gt;" Guid="8931d31f-1dc6-4c0d-ba91-d5713295c22a" ImageBase64="" InformativeScreenshot="658d7502435092016372949c4d46050b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy Partners' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" />
               </uix:NClick.Target>
@@ -307,7 +237,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open My Learning Plans" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open My Learning Plans" sap:VirtualizedContainerService.HintSize="354,228" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/partneracademy/activity-dashboard" DesignTimeRectangle="222, 394, 244, 66" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl class='chnl-tab-link' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Learning Plans' class='chnl-tab-link' tag='A' type='' check:innerText='My Learning Plans' /&gt;" Guid="3006e007-93bb-43ec-aca9-2145cf15b732" InformativeScreenshot="3320451e8275773b0bdf6ef140896d92.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy Partners' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -322,9 +252,9 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NGetText DisplayName="Get Duration" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" TextString="[Duration]" Version="V3">
+            <uix:NGetText DisplayName="Get Duration" sap:VirtualizedContainerService.HintSize="354,184" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="aed4cd4e-0832-4142-ae67-9a5576c1c012" TextString="[Duration]" Version="V3">
               <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/partneracademy/activity-dashboard" DesignTimeRectangle="691, 784, 150, 21" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl aaname='79h 55m ' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='v-timing ng-star-inserted' /&gt;" Guid="a6c335c6-9b95-4325-ac96-f41f13d5f49e" ImageBase64="" InformativeScreenshot="893ab8f997e2783d66e33fed5ff8b6c1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy Partners' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://academy.uipath.com/partneracademy/activity-dashboard" DesignTimeRectangle="691, 784, 150, 21" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl aaname='Automation Developer Professional Training' isleaf='1' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='SPAN' class='v-timing ng-star-inserted' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='v-timing ng-star-inserted' /&gt;" Guid="a6c335c6-9b95-4325-ac96-f41f13d5f49e" ImageBase64="" InformativeScreenshot="893ab8f997e2783d66e33fed5ff8b6c1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Academy Partners' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
           </Sequence>
@@ -340,7 +270,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Output file" FileName="Training\Resources\outputUItraining" sap:VirtualizedContainerService.HintSize="450,159.33333333333334" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;The course duration is: &quot;+Duration]">
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Output file" FileName="Training\Resources\outputUItraining" sap:VirtualizedContainerService.HintSize="450,158" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;The course duration is: &quot;+Duration]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
