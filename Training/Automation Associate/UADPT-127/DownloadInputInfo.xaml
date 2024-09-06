@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadInputInfo" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1253.3333333333333,1459.3333333333333" sap2010:WorkflowViewState.IdRef="DownloadInputInfo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadInputInfo" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1253.3333333333333,1421.3333333333333" sap2010:WorkflowViewState.IdRef="DownloadInputInfo_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,25 +85,25 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadInputInfo" sap:VirtualizedContainerService.HintSize="512,1394.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadInputInfo" sap:VirtualizedContainerService.HintSize="512,1356.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Rpa Challenge" sap:VirtualizedContainerService.HintSize="450,1306.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="87089d56-9250-484d-af82-b5507531afb0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Rpa Challenge" sap:VirtualizedContainerService.HintSize="450,1268.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="87089d56-9250-484d-af82-b5507531afb0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1064.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1026.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click: Download Excel" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click: Download Excel" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" CVScreenId="92d1c3f4-ae01-4018-b620-c5c90a20748d" CvElementArea="30, 988, 428, 60" CvTextArea="113, 1007, 211, 21" CvTextArgument="DOWNLOAD EXCEL" CvType="Button" DesignTimeRectangle="34, 990, 422, 54" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Download Excel cloud_download' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Download Excel cloud_download' tag='A' type='' class=' col s12 m12 l12 btn waves-effect waves-light uiColorPrimary center' check:innerText='DOWNLOAD EXCEL&amp;#xD;&amp;#xA;cloud_download' /&gt;" Guid="95b824d8-dfe3-4a3d-8052-a91540b7fca8" InformativeScreenshot="f1a2239b83fcf37be3b485bce29383ff.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Rpa Challenge' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -118,37 +118,36 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="3" DisplayName="Click: Save as" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click: Save as" sap:VirtualizedContainerService.HintSize="354,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" DesignTimeRectangle="273, 127, 178, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='What do you want to do with *?' role='list item' /&gt;&lt;ctrl name='Save as' role='push button' text='Save as' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='What do you want to do with *?' role='list item' /&gt;&lt;ctrl name='Save as' role='push button' text='Save as' automationid='' check:text='Save as' /&gt;" Guid="46314d78-7733-438d-8cbc-69e96093d2c9" InformativeScreenshot="5eaad6d60b1c54a7b5b1a9c2847de563.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" DesignTimeRectangle="273, 127, 178, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Recent downloads' role='list' /&gt;&lt;ctrl name='What do you want to do with challenge.xlsx?' role='list item' /&gt;&lt;ctrl name='Save as More options' role='menu button' /&gt;&lt;ctrl name='Save as' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Recent downloads' role='list' /&gt;&lt;ctrl name='What do you want to do with challenge.xlsx?' role='list item' /&gt;&lt;ctrl name='Save as More options' role='menu button' /&gt;&lt;ctrl name='Save as' role='push button' automationid='' check:fulltext='Save as' /&gt;" Guid="d445dc97-ee8e-49b2-8b03-c698eae9f8e6" InformativeScreenshot="04e52b4b0810f5850b2516a47c897e11.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="b7ca79d0-3d43-44dd-8150-31548aef277f" CvElementArea="101, 127, 162, 52" CvTextArea="156, 144, 54, 24" CvTextArgument="Open" CvType="Button" DesignTimeRectangle="102, 127, 160, 48" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Recent downloads' role='list' /&gt;&lt;ctrl name='What do you want to do with challenge.xlsx?' role='list item' /&gt;&lt;ctrl name='Open' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Recent downloads' role='list' /&gt;&lt;ctrl name='What do you want to do with challenge.xlsx?' role='list item' /&gt;&lt;ctrl name='Open' role='push button' automationid='' check:fulltext='Open' /&gt;" Guid="0ced93be-c9ce-4035-96a6-57646646515f" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                <uix:VerifyExecutionOptions DisplayName="Element 'Details Pane'" Mode="Appears">
                   <uix:VerifyExecutionOptions.Retry>
                     <InArgument x:TypeArguments="x:Boolean" />
                   </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" DesignTimeRectangle="11, 520, 938, 98" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' automationid='' check:text='Details Pane' /&gt;" Guid="68bd8527-1768-4d26-b178-0b66dc940163" InformativeScreenshot="2d7d1b7f22ccac695999895e855055d4.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                  </uix:VerifyExecutionOptions.Target>
                   <uix:VerifyExecutionOptions.Timeout>
                     <InArgument x:TypeArguments="x:Double" />
                   </uix:VerifyExecutionOptions.Timeout>
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into: Filename" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Text="C:\Users\michael.sanchez\Documents\GitHub\UADPTraining\Training\Automation Associate\UADPT-127\temp\challenge.xlsx" Version="V3">
+            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="None" DelayBefore="1" DisplayName="Type Into: Filename" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Text="C:\Users\michael.sanchez\Documents\GitHub\UADPTraining\Training\Automation Associate\UADPT-127\temp\challenge" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" CVScreenId="354acd24-b00e-47b5-ab23-81989dbcf6bc" CvElementArea="202, 536, 739, 35" CvType="InputBox" DesignTimeRectangle="199, 538, 742, 33" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='File name:' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='File name:' /&gt;" Guid="96256479-db3e-4eff-989d-09f1c230a82c" InformativeScreenshot="2f3e8fef5c34cdb4d2c961ee46a4a0f8.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='Save As' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click: Save as" sap:VirtualizedContainerService.HintSize="354,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click: Save as" sap:VirtualizedContainerService.HintSize="354,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87089d56-9250-484d-af82-b5507531afb0" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://rpachallenge.com/" CVScreenId="72494e0f-7ec3-4045-bef6-9cc9ef0ca145" CvElementArea="640, 651, 133, 41" CvTextArea="685, 663, 40, 18" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="641, 652, 132, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' aaname='Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' aaname='Save' check:text='unchecked' /&gt;" Guid="5910996d-087e-4df3-a3e0-a6557358de10" InformativeScreenshot="f432383bb745fc492dc98fa51bfd213d.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='Save As' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>

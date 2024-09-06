@@ -107,7 +107,15 @@
     {
       "Path": "Training/Automation Associate/UADPT-127/FillForm.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "Phone&Sequence_2",
+        "Email&Sequence_2",
+        "Address&Sequence_2",
+        "Role&Sequence_2",
+        "CompanyName&Sequence_2",
+        "LastName&Sequence_2",
+        "FirstName&Sequence_2"
+      ],
       "ArgumentsSectionElementsOrder": [
         "in_dtInputInfo"
       ],
@@ -117,7 +125,11 @@
     {
       "Path": "Training/Automation Associate/UADPT-127/PrintResults.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "List&Sequence_2",
+        "ResultsDigits&Sequence_2",
+        "ResultsPrompt&Sequence_2"
+      ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -137,6 +149,16 @@
       "ArgumentsSectionElementsOrder": [
         "out_dtInputInfo"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Training/Automation Associate/UADPT-127/ClearFolderTemp.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "FolderExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
